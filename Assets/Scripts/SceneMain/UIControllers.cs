@@ -11,6 +11,7 @@ public class UIControllers : MonoBehaviour
     [SerializeField] Button btnCloseScene;
 
     [SerializeField] Button btnLevel1;
+    [SerializeField] Button btnLevel2;
     [SerializeField] Image imgSelectLevel;
 
     private void Start()
@@ -20,6 +21,7 @@ public class UIControllers : MonoBehaviour
         btnCloseScene.onClick.AddListener(CloseSceneMain);
 
         btnLevel1.onClick.AddListener(SelectLevel1);
+        btnLevel2.onClick.AddListener(SelectLevel2);
     }
 
     private void SelectLevel()
@@ -34,7 +36,13 @@ public class UIControllers : MonoBehaviour
 
     private void SelectLevel1()
     {
+        AudioManager.instance.mucsicSource.Play();
         SceneManager.LoadScene(2);
+    }
+
+    private void SelectLevel2()
+    {
+        SceneManager.LoadScene(3);
     }
 
     private void CloseSceneMain()

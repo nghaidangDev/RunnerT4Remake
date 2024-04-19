@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class UILevel : MonoBehaviour
+public class UILevel2 : MonoBehaviour
 {
     [SerializeField] private Health playerHealth;
     [SerializeField] private GameObject player;
@@ -13,17 +13,12 @@ public class UILevel : MonoBehaviour
     [SerializeField] private Image imgLose;
     [SerializeField] private Image imgPause;
 
-    [SerializeField] private Button btnRestart;
+    [SerializeField] private Button btnRestartLv2;
     [SerializeField] private Button btnExit;
     [SerializeField] private Button btnPauseStart;
     [SerializeField] private Button btnPauseExit;
     [SerializeField] private Button btnPause;
     [SerializeField] private Button btnExitWin;
-
-    [Header("Button Audio")]
-    [SerializeField] private Button btnAudio;
-    [SerializeField] private Button btnExitAudio;
-    [SerializeField] private Image imgAudio;
 
     private void Start()
     {
@@ -31,13 +26,10 @@ public class UILevel : MonoBehaviour
         btnPauseStart.onClick.AddListener(ExitImgPause);
         btnPause.onClick.AddListener(LoadImgPause);
 
-        btnRestart.onClick.AddListener(RestartGame);
+        btnRestartLv2.onClick.AddListener(RestartGame);
         btnExit.onClick.AddListener(ExitGame);
 
         btnExitWin.onClick.AddListener(ExitGame);
-
-        btnAudio.onClick.AddListener(LoadImgAudio);
-        btnExitAudio.onClick.AddListener(ExitImgAudio);
 
     }
 
@@ -48,7 +40,7 @@ public class UILevel : MonoBehaviour
 
     private void LoadImgLose()
     {
-        if (playerHealth.GetComponent<Health>().currentHealth <= 0) 
+        if (playerHealth.GetComponent<Health>().currentHealth <= 0)
         {
             imgLose.gameObject.SetActive(true);
         }
@@ -56,13 +48,11 @@ public class UILevel : MonoBehaviour
 
     private void RestartGame()
     {
-        AudioManager.instance.mucsicSource.Play();
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(3);
     }
 
     private void ExitGame()
     {
-        AudioManager.instance.mucsicSource.Stop();
         SceneManager.LoadScene(1);
     }
 
@@ -75,18 +65,6 @@ public class UILevel : MonoBehaviour
     private void ExitImgPause()
     {
         imgPause.gameObject.SetActive(false);
-        player.gameObject.SetActive(true);
-    }
-
-    private void LoadImgAudio()
-    {
-        player.gameObject.SetActive(false);
-        imgAudio.gameObject.SetActive(true);
-    }
-
-    private void ExitImgAudio()
-    {
-        imgAudio.gameObject.SetActive(false);
         player.gameObject.SetActive(true);
     }
 }

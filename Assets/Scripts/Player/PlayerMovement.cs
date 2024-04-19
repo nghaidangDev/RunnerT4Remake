@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -33,7 +32,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded())
         {
-            AudioManager.instance.PlaySound(jumpSound);
+            AudioManager.instance.PlaySFX("Jump");
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
             anim.SetTrigger("jump");
         }

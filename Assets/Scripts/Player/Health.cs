@@ -10,9 +10,6 @@ public class Health : MonoBehaviour
     private Animator anim;
     private bool dead;
 
-    [Header("SPX")]
-    [SerializeField] private AudioClip hitSound;
-    [SerializeField] private AudioClip dieSound;
 
     private void Awake()
     {
@@ -26,14 +23,15 @@ public class Health : MonoBehaviour
 
         if (currentHealth > 0)
         {
-            AudioManager.instance.PlaySound(hitSound);
+            AudioManager.instance.PlaySFX("Hit");
             anim.SetTrigger("hit");
         }
         else
         {
             if (!dead)
             {
-                AudioManager.instance.PlaySound(dieSound);
+                AudioManager.instance.mucsicSource.Stop();
+                AudioManager.instance.PlaySFX("Lose");
                 anim.SetTrigger("die");
                 GetComponent<PlayerMovement>().enabled = false;
                 dead = true;

@@ -11,9 +11,6 @@ public class PlayerManager : MonoBehaviour
     [SerializeField] private Image imgLose;
     [SerializeField] private Image imgWin;
 
-    [Header("SPX")]
-    [SerializeField] private AudioClip deadSound;
-    [SerializeField] private AudioClip winSound;
 
     private void Update()
     {
@@ -29,13 +26,15 @@ public class PlayerManager : MonoBehaviour
     {
         if (collision.tag == "DeadZone")
         {
-            AudioManager.instance.PlaySound(deadSound);
+            AudioManager.instance.mucsicSource.Stop();
+            AudioManager.instance.PlaySFX("Lose");
             player.gameObject.SetActive(false);
             imgLose.gameObject.SetActive(true);
 
         }else if (collision.tag == "ZoneWin")
         {
-            AudioManager.instance.PlaySound(winSound);
+            AudioManager.instance.mucsicSource.Stop();
+            AudioManager.instance.PlaySFX("Win");
             player.gameObject.SetActive(false);
             imgWin.gameObject.SetActive(true);
         }
