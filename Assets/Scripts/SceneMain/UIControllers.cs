@@ -1,18 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class UIControllers : MonoBehaviour
 {
-    [SerializeField] Button btnSelectLevel;
-    [SerializeField] Button btnClose;
-    [SerializeField] Button btnCloseScene;
+    [SerializeField] private Button btnSelectLevel;
+    [SerializeField] private Button btnClose;
+    [SerializeField] private Button btnCloseScene;
 
-    [SerializeField] Button btnLevel1;
-    [SerializeField] Button btnLevel2;
-    [SerializeField] Image imgSelectLevel;
+    [SerializeField] private Button btnLevel1;
+    [SerializeField] private Button btnLevel2;
+    [SerializeField] private Image imgSelectLevel;
 
     private void Start()
     {
@@ -36,7 +37,7 @@ public class UIControllers : MonoBehaviour
 
     private void SelectLevel1()
     {
-        AudioManager.instance.mucsicSource.Play();
+        //AudioManager.instance.mucsicSource.Play();
         SceneManager.LoadScene(2);
     }
 

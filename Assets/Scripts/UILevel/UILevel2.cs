@@ -20,6 +20,11 @@ public class UILevel2 : MonoBehaviour
     [SerializeField] private Button btnPause;
     [SerializeField] private Button btnExitWin;
 
+    [Header("Button Audio")]
+    [SerializeField] private Button btnAudio;
+    [SerializeField] private Button btnExitAudio;
+    [SerializeField] private Image imgAudio;
+
     private void Start()
     {
         btnPauseExit.onClick.AddListener(ExitGame);
@@ -30,6 +35,9 @@ public class UILevel2 : MonoBehaviour
         btnExit.onClick.AddListener(ExitGame);
 
         btnExitWin.onClick.AddListener(ExitGame);
+
+        btnAudio.onClick.AddListener(LoadImgAudio);
+        btnExitAudio.onClick.AddListener(ExitImgAudio);
 
     }
 
@@ -65,6 +73,18 @@ public class UILevel2 : MonoBehaviour
     private void ExitImgPause()
     {
         imgPause.gameObject.SetActive(false);
+        player.gameObject.SetActive(true);
+    }
+
+    private void LoadImgAudio()
+    {
+        player.gameObject.SetActive(false);
+        imgAudio.gameObject.SetActive(true);
+    }
+
+    private void ExitImgAudio()
+    {
+        imgAudio.gameObject.SetActive(false);
         player.gameObject.SetActive(true);
     }
 }
