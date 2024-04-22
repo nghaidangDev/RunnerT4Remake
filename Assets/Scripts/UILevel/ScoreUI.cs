@@ -1,20 +1,21 @@
-using System.Collections;
-using System.Collections.Generic;
+
 using TMPro;
 using UnityEngine;
 
 public class ScoreUI : MonoBehaviour
 {
-    private PlayerManager playerManager;
+    public int score;
+    public static ScoreUI Instance;
     [SerializeField] private TMP_Text scoreTxt;
 
     private void Awake()
     {
-        playerManager = FindObjectOfType<PlayerManager>();
+        Instance = this;
     }
 
     private void Update()
     {
-        scoreTxt.text = playerManager.scoreStar.ToString();
+        scoreTxt.text = score.ToString();
     }
+
 }

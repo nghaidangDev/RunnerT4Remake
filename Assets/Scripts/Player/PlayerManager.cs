@@ -11,7 +11,7 @@ public class PlayerManager : MonoBehaviour
     [SerializeField] private Image imgLose;
     [SerializeField] private Image imgWin;
 
-    public int scoreStar { get; private set; }
+    //public int scoreStar;
 
     private void Update()
     {
@@ -41,7 +41,7 @@ public class PlayerManager : MonoBehaviour
         }else if (collision.tag == "Star")
         {
             collision.gameObject.SetActive(false);
-            scoreStar++;
+            ScoreUI.Instance.score++;
         }
     }
 }

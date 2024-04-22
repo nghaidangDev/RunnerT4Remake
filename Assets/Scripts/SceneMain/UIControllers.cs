@@ -37,7 +37,7 @@ public class UIControllers : MonoBehaviour
 
     private void SelectLevel1()
     {
-        //AudioManager.instance.mucsicSource.Play();
+        AudioManager.instance.mucsicSource.Play();
         SceneManager.LoadScene(2);
     }
 
