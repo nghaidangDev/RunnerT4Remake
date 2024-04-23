@@ -42,4 +42,14 @@ public class PlayerMovement : MonoBehaviour
     {
         return Physics2D.OverlapCircle(groundCheck.position, 0.5f, layer);
     }
+
+    public void AnimationIdle()
+    {
+        anim.Play("Idle");
+    }
+
+    public void AnimationRun()
+    {
+        anim.Play("Run");
+    }
 }
