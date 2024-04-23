@@ -1438,6 +1438,8 @@ MonoBehaviour:
   mucsicSounds:
   - name: Theme
     clip: {fileID: 8300000, guid: 2e045ef9cc033fb469b751393fcd55aa, type: 3}
+  - name: BackgroundMusic
+    clip: {fileID: 8300000, guid: b8ac4cf704a17b34bb3341d878077ffa, type: 3}
   sfxSounds:
   - name: Jump
     clip: {fileID: 8300000, guid: 38145534e1635584ebcf61d34e314526, type: 3}

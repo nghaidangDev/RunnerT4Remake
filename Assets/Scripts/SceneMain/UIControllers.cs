@@ -37,12 +37,13 @@ public class UIControllers : MonoBehaviour
 
     private void SelectLevel1()
     {
-        AudioManager.instance.mucsicSource.Play();
+        AudioManager.instance.PlayMusic("Theme");
         SceneManager.LoadScene(2);
     }
 
     private void SelectLevel2()
     {
+        AudioManager.instance.PlayMusic("Theme");
         SceneManager.LoadScene(3);
     }
 

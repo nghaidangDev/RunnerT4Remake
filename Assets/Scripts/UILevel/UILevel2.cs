@@ -56,11 +56,13 @@ public class UILevel2 : MonoBehaviour
 
     private void RestartGame()
     {
+        AudioManager.instance.PlayMusic("Theme");
         SceneManager.LoadScene(3);
     }
 
     private void ExitGame()
     {
+        AudioManager.instance.mucsicSource.Stop();
         SceneManager.LoadScene(1);
     }
 
@@ -72,6 +74,7 @@ public class UILevel2 : MonoBehaviour
 
     private void ExitImgPause()
     {
+
         imgPause.gameObject.SetActive(false);
         player.gameObject.SetActive(true);
     }
