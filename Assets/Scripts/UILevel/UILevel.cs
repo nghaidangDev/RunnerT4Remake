@@ -56,12 +56,14 @@ public class UILevel : MonoBehaviour
 
     private void RestartGame()
     {
+        StarManager.instance.UpdateStar();
         AudioManager.instance.mucsicSource.Play();
         SceneManager.LoadScene(2);
     }
 
     private void ExitGame()
     {
+        StarManager.instance.UpdateStar();
         AudioManager.instance.mucsicSource.Stop();
         SceneManager.LoadScene(1);
     }

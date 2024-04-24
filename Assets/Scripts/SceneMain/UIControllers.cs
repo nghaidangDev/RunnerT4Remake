@@ -15,6 +15,10 @@ public class UIControllers : MonoBehaviour
     [SerializeField] private Button btnLevel2;
     [SerializeField] private Image imgSelectLevel;
 
+    [Header("Star")]
+    [SerializeField] private TMP_Text starText;
+
+
     private void Start()
     {
         btnSelectLevel.onClick.AddListener(SelectLevel);
@@ -23,6 +27,10 @@ public class UIControllers : MonoBehaviour
 
         btnLevel1.onClick.AddListener(SelectLevel1);
         btnLevel2.onClick.AddListener(SelectLevel2);
+
+        //Star
+        int totalStar = PlayerPrefs.GetInt("TotalStar", 0);
+        starText.text = totalStar.ToString();
     }
 
     private void SelectLevel()
